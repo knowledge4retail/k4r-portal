@@ -1,0 +1,59 @@
+<div class="mat-card-container" fxLayout="column" fxLayoutAlign="space-between">
+  <mat-card-title fxLayout="row wrap" fxLayoutAlign="start center">
+    <mat-icon matTooltip="API">{{ data.iconName }}</mat-icon>
+    &nbsp;{{ data.prettyName }}
+  </mat-card-title>
+  <mat-card-subtitle
+    ><span matTooltip="Active version">{{
+      data.version
+    }}</span></mat-card-subtitle
+  >
+  <mat-card-subtitle>{{ data.description }}</mat-card-subtitle>
+  <mat-card-content>
+    <app-health-indicator [health]="data.health"></app-health-indicator>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <div fxLayout fxLayoutAlign="space-between">
+      <a
+        mat-raised-button
+        color="primary"
+        *ngIf="data.refFunctional"
+        matTooltip="Open {{ data.prettyName }} in another tab"
+        [href]="data.refFunctional"
+        target="_blank"
+        ><mat-icon>launch</mat-icon>&nbsp;Open</a
+      >
+      <div>
+        <a
+          mat-stroked-button
+          color="primary"
+          *ngIf="data.refDocs"
+          matTooltip="Open documentation for {{ data.prettyName }}"
+          [href]="data.refDocs"
+          target="_blank"
+          ><mat-icon>article</mat-icon></a
+        >
+        <a
+          mat-stroked-button
+          color="primary"
+          *ngIf="!data.favorite"
+          matTooltip="Set {{ data.prettyName }} as favorite on this device"
+          (click)="updateFavorite(data.prettyName, false)"
+          ><mat-icon>star</mat-icon></a
+        >
+        <a
+          mat-stroked-button
+          color="primary"
+          class="favorite"
+          *ngIf="data.favorite"
+          matTooltip="Remove {{
+            data.prettyName
+          }} from favorites on this device"
+          (click)="updateFavorite(data.prettyName, true)"
+          ><mat-icon>star</mat-icon></a
+        >
+      </div>
+    </div>
+  </mat-card-actions>
+</div>

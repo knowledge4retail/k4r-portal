@@ -1,0 +1,13 @@
+@import "./../../styles/colors.scss";
+
+.status-indicator {
+  &.RUNNING {
+    color: $success;
+  }
+  &.TERMINATED {
+    color: $error;
+  }
+  &.PENDING {
+    color: $warning;
+  }
+}

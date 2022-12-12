@@ -1,0 +1,55 @@
+<div class="meta-data-container">
+  <h3>{{ data?.storeName }}</h3>
+  <table>
+    <tr>
+      <td>Number:</td>
+      <td>{{ data?.storeNumber }}</td>
+    </tr>
+    <tr>
+      <td>Shelf Count:</td>
+      <td>{{ data?.shelfCount }}</td>
+    </tr>
+    <tr>
+      <td>Shelf Layer Count:</td>
+      <td>{{ data?.shelfLayerCount }}</td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td>Barcode Count:</td>
+      <td>{{ data?.barcodeCount }}</td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td>Product Count:</td>
+      <td>{{ data?.productCount }}</td>
+    </tr>
+    <tr>
+      <td>Address:</td>
+      <td>
+        {{ data?.addressStreet }} {{ data?.addressStreetNumber }}<br />{{
+          data?.addressPostcode
+        }}
+        {{ data?.addressCity }}<br />
+        {{ data?.addressState }}, {{ data?.addressCountry }}
+      </td>
+    </tr>
+    <tr>
+      <td>Latitude:</td>
+      <td>{{ data?.latitude }}</td>
+    </tr>
+    <tr>
+      <td>Longitude:</td>
+      <td>{{ data?.longitude }}</td>
+    </tr>
+  </table>
+  <a
+    *ngIf="showStorevizButton"
+    class="storeviz-button"
+    mat-raised-button
+    color="primary"
+    matTooltip="Open Store Visualisation for {{ data?.storeName }}"
+    href="{{ env.storevizUrl + data?.id }}"
+    target="_blank"
+    ><mat-icon>launch</mat-icon>&nbsp;Open Store Visualisation</a
+  >
+</div>

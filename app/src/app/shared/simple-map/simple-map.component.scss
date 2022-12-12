@@ -1,0 +1,15 @@
+@import "./../../styles/colors.scss";
+
+#simple-map {
+    height: 100%;
+    width: 100%;
+    background-color: $light_grey;
+
+    .not-valid {
+        opacity: 0.5;
+
+        mat-icon {
+            margin-right: 10px;
+        }
+    }
+}

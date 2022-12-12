@@ -1,0 +1,47 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row fxLayout="row wrap" fxLayoutAlign="center">
+    <mat-form-field
+      class="filter-term-container"
+      appearance="fill"
+      color="accent"
+    >
+      <mat-label>Search</mat-label>
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="servicesFilter.term"
+        (input)="onFilter($event)"
+      />
+      <button
+        *ngIf="servicesFilter.term"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="servicesFilter.term = ''; onFilter($event)"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <div
+      class="filter-toggles-container"
+      fxLayout="row wrap"
+      fxLayoutAlign="center center"
+    >
+      <mat-slide-toggle
+        [(ngModel)]="servicesFilter.showApis"
+        (change)="onFilter($event)"
+        >APIs</mat-slide-toggle
+      >
+      <mat-slide-toggle
+        [(ngModel)]="servicesFilter.showWebUIs"
+        (change)="onFilter($event)"
+        >Web UIs</mat-slide-toggle
+      >
+      <mat-slide-toggle
+        [(ngModel)]="servicesFilter.showAdministratives"
+        (change)="onFilter($event)"
+        >Administration</mat-slide-toggle
+      >
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

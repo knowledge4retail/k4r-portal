@@ -1,0 +1,14 @@
+@import "~animate.css/animate.css";
+
+@import "./app/styles/colors.scss";
+@import "./app/styles/theme.scss";
+@import "./app/styles/global.scss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Fabrikat, Roboto, Helvetica Neue, sans-serif;
+}

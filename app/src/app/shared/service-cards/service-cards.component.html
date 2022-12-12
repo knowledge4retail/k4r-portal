@@ -1,0 +1,46 @@
+<mat-list>
+  <div *ngIf="data && favorites && favorites.length > 0" mat-subheader>
+    FAVORITES
+  </div>
+  <div
+    class="services-container"
+    fxLayout="row wrap"
+    fxLayoutAlign="start start"
+    *ngIf="data && favorites && favorites.length > 0"
+  >
+    <mat-card
+      class="service-card-container"
+      fxFlexAlign="stretch"
+      *ngFor="let item of favorites"
+    >
+      <app-service-card
+        [data]="item"
+        (updateServiceFavorite)="onUpdateFavorites($event)"
+      ></app-service-card>
+    </mat-card>
+  </div>
+
+  <div *ngFor="let section of data | keyvalue">
+    <mat-divider *ngIf="section.key && section.value.length > 0"></mat-divider>
+    <div *ngIf="section.key && section.value.length > 0" mat-subheader>
+      {{ section.key | uppercase }}
+    </div>
+    <div
+      class="services-container"
+      fxLayout="row wrap"
+      fxLayoutAlign="start start"
+      *ngIf="section && section.value.length > 0"
+    >
+      <mat-card
+        class="service-card-container"
+        fxFlexAlign="stretch"
+        *ngFor="let item of section.value"
+      >
+        <app-service-card
+          [data]="item"
+          (updateServiceFavorite)="onUpdateFavorites($event)"
+        ></app-service-card>
+      </mat-card>
+    </div>
+  </div>
+</mat-list>

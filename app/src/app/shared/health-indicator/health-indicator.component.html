@@ -1,0 +1,15 @@
+<mat-chip-list aria-label="Service status">
+  <mat-chip *ngIf="health" fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-icon
+      class="status-indicator running animate__animated animate__flash animate__infinite animate__slower"
+      [ngClass]="health"
+      >circle</mat-icon
+    >&nbsp;{{ health }}
+  </mat-chip>
+  <mat-chip *ngIf="!health">
+    <mat-icon
+      class="status-indicator disconnected animate__animated animate__flash animate__infinite animate__slower"
+      >power_off</mat-icon
+    >&nbsp;CONNECTING...
+  </mat-chip>
+</mat-chip-list>

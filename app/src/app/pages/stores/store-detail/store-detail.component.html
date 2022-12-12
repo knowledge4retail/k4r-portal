@@ -1,0 +1,11 @@
+<div
+  *ngIf="data"
+  class="store-detail-container"
+  fxLayout="row wrap"
+  fxLayoutAlign="space-between"
+>
+  <div class="simple-map-container">
+    <app-simple-map *ngIf="data" [data]="[data]" [showPopup]="false"></app-simple-map>
+  </div>
+  <app-detail-info [data]="data" [showStorevizButton]="false"></app-detail-info>
+</div>

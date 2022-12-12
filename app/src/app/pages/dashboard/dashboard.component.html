@@ -1,0 +1,7 @@
+<div class="dashboard-container" *ngIf="(servicesFilter$ | async) && (services$ | async)">
+  <app-service-cards-filter
+    [servicesFilter]="(servicesFilter$ | async)!"
+    (triggerFilter)="onTriggerFilter($event)"
+  ></app-service-cards-filter>
+  <app-service-cards [data]="services$ | async" [favorites]="favorites$ | async" (updateServiceFavorite)="onUpdateServiceFavorite($event)"></app-service-cards>
+</div>

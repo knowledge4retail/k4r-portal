@@ -1,0 +1,127 @@
+@use "@angular/material" as mat;
+
+@font-face {
+  font-family: "Fabrikat";
+  src: local("Fabrikat"), url("./../../assets/fonts/Fabrikat\ Mono\ Black.ttf") format("truetype");
+}
+
+@include mat.core();
+
+$k4r-primary-palette: (
+    50 : #e1e1e5,
+    100 : #b3b3bf,
+    200 : #818194,
+    300 : #4e4e69,
+    400 : #282848,
+    500 : #020228,
+    600 : #020224,
+    700 : #01011e,
+    800 : #010118,
+    900 : #01010f,
+    A100 : #5252ff,
+    A200 : #1f1fff,
+    A400 : #0000eb,
+    A700 : #0000d1,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #ffffff,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$k4r-secondary-palette: (
+    50 : #f0ffe0,
+    100 : #daffb3,
+    200 : #c2ff80,
+    300 : #aaff4d,
+    400 : #97ff26,
+    500 : #85ff00,
+    600 : #7dff00,
+    700 : #72ff00,
+    800 : #68ff00,
+    900 : #55ff00,
+    A100 : #ffffff,
+    A200 : #f6fff2,
+    A400 : #d1ffbf,
+    A700 : #beffa6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$k4r-warning-palette: (
+    50 : #f3e0e0,
+    100 : #e0b3b3,
+    200 : #cc8080,
+    300 : #b84d4d,
+    400 : #a82626,
+    500 : #990000,
+    600 : #910000,
+    700 : #860000,
+    800 : #7c0000,
+    900 : #6b0000,
+    A100 : #ff9a9a,
+    A200 : #ff6767,
+    A400 : #ff3434,
+    A700 : #ff1a1a,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$my-app-primary: mat.define-palette($k4r-primary-palette);
+$my-app-accent: mat.define-palette($k4r-secondary-palette);
+$my-app-warn: mat.define-palette($k4r-warning-palette);
+$my-app-typography: mat.define-typography-config(
+    $font-family: "Fabrikat",
+  );
+
+$my-app-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-app-primary,
+      accent: $my-app-accent,
+      warn: $my-app-warn
+    ),
+    typography: $my-app-typography,
+  )
+);
+
+@include mat.all-component-themes($my-app-theme);

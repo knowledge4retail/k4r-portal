@@ -1,0 +1,10 @@
+<div id="simple-map" fxLayout="row" fxLayoutAlign="center center">
+  <div
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    class="not-valid"
+    *ngIf="!filteredStores || filteredStores!.length === 0"
+  >
+    <mat-icon>location_off</mat-icon> No valid coordinates
+  </div>
+</div>

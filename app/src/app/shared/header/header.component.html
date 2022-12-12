@@ -1,0 +1,29 @@
+<mat-toolbar
+  color="primary"
+  fxLayout="row wrap"
+  fxLayoutAlign="space-between center"
+>
+  <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <button mat-icon-button (click)="toggleMenu()">
+      <mat-icon *ngIf="!opened">menu</mat-icon>
+      <mat-icon *ngIf="opened">close</mat-icon>
+    </button>
+    <img class="logo" src="./../../assets/k4r_logo.svg" />
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <app-notifications
+      *ngIf="notifications && notifications.length > 0"
+      [data]="notifications"
+      (setNotificationsViewed)="onSetNotificationsViewed()"
+    ></app-notifications>
+    <span *ngIf="user">Welcome, {{ user.preferred_username }}</span>
+    <button
+      mat-stroked-button
+      matTooltip="Log out"
+      matTooltipPosition="below"
+      (click)="logOut()"
+    >
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

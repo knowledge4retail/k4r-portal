@@ -1,0 +1,16 @@
+@import "./styles/colors.scss";
+
+.sidenav-container {
+  background-image: url("./../assets/brain.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-color: $primary;
+  background-attachment: fixed;
+  .mat-sidenav {
+    background: $accent;
+  }
+  .content-container {
+    padding: 20px 40px;
+    min-height: 100vh;
+  }
+} 

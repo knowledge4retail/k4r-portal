@@ -1,0 +1,51 @@
+@import "./colors.scss";
+
+.mat-divider {
+  border-top-color: $accent;
+}
+
+div[mat-subheader].mat-subheader {
+  color: $accent;
+}
+
+.mat-form-field {
+  font-size: 14px;
+}
+
+table.mat-table {
+  width: 100%;
+
+  .element-detail {
+    overflow: hidden;
+    display: flex;
+  }
+
+  tr.element-detail-row {
+    height: 0;
+  }
+
+  .element-row td {
+    border-bottom-width: 0;
+  }
+}
+
+.mat-tab-group .mat-tab-label-container {
+  margin-bottom: 20px;
+
+  .mat-tab-label {
+    color: white;
+  }
+}
+
+.leaflet-popup-content-wrapper {
+  font-family: 'Fabrikat';
+}
+
+.mat-form-field div.mat-form-field-wrapper .mat-form-field-flex {
+  border-bottom: 2px solid white;
+}
+
+.cdk-overlay-connected-position-bounding-box .mat-menu-panel {
+  min-width: none;
+  max-width: none;
+}

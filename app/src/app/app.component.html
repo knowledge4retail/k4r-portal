@@ -1,0 +1,29 @@
+<app-header
+  [opened]="sidenav.opened"
+  [isLoggedIn]="isLoggedIn$ | async"
+  [user]="user$ | async"
+  [notifications]="notifications$ | async"
+  (toggleSideNav)="sidenav.toggle()"
+  (triggerLogOut)="logOut()"
+  (setNotificationsViewed)="onSetNotificationsViewed($event)"
+></app-header>
+
+<mat-sidenav-container
+  class="sidenav-container"
+  [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+>
+  <mat-sidenav
+    #sidenav
+    mode="over"
+    [fixedInViewport]="mobileQuery.matches"
+    fixedTopGap="56"
+  >
+    <app-sidemenu [items]="navItems" (itemClicked)="sidenav.close()"></app-sidemenu>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

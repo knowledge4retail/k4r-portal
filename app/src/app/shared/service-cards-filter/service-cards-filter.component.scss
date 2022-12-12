@@ -1,0 +1,12 @@
+.mat-toolbar-row {
+  height: auto;
+  font-size: 1rem;
+
+  .mat-form-field.filter-term-container {
+    margin-right: 20px;
+  }
+
+  .filter-toggles-container mat-slide-toggle {
+    padding: 0 10px;
+  }
+}

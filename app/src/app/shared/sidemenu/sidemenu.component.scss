@@ -1,0 +1,12 @@
+@import "./../../styles/colors.scss";
+
+mat-nav-list a.mat-list-item {
+  &.active {
+    background: $primary;
+    color: white;
+  }
+
+  .mat-icon {
+    margin-right: 10px;
+  }
+}
